@@ -27,7 +27,7 @@ export const postScoreboard = async (quizId, userId, scorePercent, timeMs) => {
 
 	console.log("Payload: ", payload);
 
-	const response = await fetch(VITE_URL_WP + "/scoreboards", {
+	const response = await fetch(VITE_URL_WP + "wp-json/wp/v2/scoreboards", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",

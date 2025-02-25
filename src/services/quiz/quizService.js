@@ -2,20 +2,23 @@ const { VITE_URL_WP } = import.meta.env;
 
 // Returns all published quizzes
 export const getAllQuizzes = async () => {
-	const response = await fetch(VITE_URL_WP + "/quiz?status=publish");
+	const response = await fetch(
+		VITE_URL_WP + "wp-json/wp/v2/quiz?status=publish"
+	);
 	if (!response.ok) {
 		throw new Error(
 			"Erreur lors du getAllQuizzes avec statut: ",
 			response.status
 		);
 	}
+	console.log(response.body);
 	const data = await response.json();
 	return data;
 };
 
 // Returns one quiz from id (with name of user in scorboard instead of id of scoreboard)
 export const getQuizById = async (id) => {
-	const response = await fetch(VITE_URL_WP + "/quiz/" + id);
+	const response = await fetch(VITE_URL_WP + "wp-json/wp/v2/quiz/" + id);
 	if (!response.ok) {
 		throw new Error("Erreur lors dugetQuizById avec statut: ", response.status);
 	}
@@ -25,7 +28,9 @@ export const getQuizById = async (id) => {
 	if (quiz.scoreboard && Array.isArray(quiz.scoreboard)) {
 		const scoreboardPromises = quiz.scoreboard.map(async (score) => {
 			if (score.id) {
-				const response = await fetch(VITE_URL_WP + "/scoreboards/" + score.id);
+				const response = await fetch(
+					VITE_URL_WP + "wp-json/wp/v2/scoreboards/" + score.id
+				);
 				if (!response.ok) {
 					throw new Error(
 						"Erreur lors du fetch du scoreboard avec statut: ",
