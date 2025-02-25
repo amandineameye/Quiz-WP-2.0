@@ -23,9 +23,9 @@ const Login = () => {
 	};
 
 	return (
-		<div>
+		<div className="content-without-close">
 			<h2>Connexion</h2>
-			{error && <p style={{ color: "red" }}>{error}</p>}
+			{error  && <p className="message" style={{ color: "red" }}>{error}</p>}
 			<form onSubmit={handleSubmit}>
 				<div>
 					<label htmlFor="username">Nom d'utilisateur :</label>
@@ -47,7 +47,7 @@ const Login = () => {
 						onChange={(e) => setPassword(e.target.value)}
 					/>
 				</div>
-				<button type="submit">Se connecter</button>
+				<button className="submit-button" type="submit">Se connecter</button>
 			</form>
 		</div>
 	);

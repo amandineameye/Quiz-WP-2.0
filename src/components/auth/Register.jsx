@@ -25,10 +25,10 @@ const Register = () => {
 	};
 
 	return (
-		<div>
+		<div className="content-without-close">
 			<h2>Inscription</h2>
-			{error && <p style={{ color: "red" }}>{error}</p>}
-			{successMsg && <p style={{ color: "green" }}>{successMsg}</p>}
+			{error && <p className="message" style={{ color: "red" }}>{error}</p>}
+			{successMsg && <p className="message" style={{ color: "green" }}>{successMsg}</p>}
 
 			<form onSubmit={handleSubmit}>
 				<div>
@@ -53,7 +53,7 @@ const Register = () => {
 					/>
 				</div>
 
-				<button type="submit">S’inscrire</button>
+				<button className="submit-button" type="submit">S’inscrire</button>
 			</form>
 		</div>
 	);

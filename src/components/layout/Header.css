@@ -16,30 +16,90 @@ header {
     color: var(--almost-white);
     cursor: pointer;
   }
+
+  .header-right {
+    position: absolute;
+    top: calc(50px - 1.4rem);
+    right: 2rem;
+    display: flex;
+    gap: 0.5rem; /* écart horizontal entre les 2 boutons */
+
+    button {
+      height: 2.8rem;
+      width: 8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: var(--almost-white);
+      border: 3px solid var(--almost-black);
+      border-radius: 15px;
+      font-weight: 700;
+    }
+
+    button:hover {
+      border-width: 4px;
+    }
+  }
 }
 
-.header-right {
-  position: absolute;
-  top: calc(50px - 1.4rem);
-  right: 2rem;
+/* Sur toute la page */
+.modal-overlay {
+  position: fixed; /* pour recouvrir l'écran */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
-  gap: 0.5rem; /* écart horizontal entre les 2 boutons */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* passer au-dessus du header */
 
-  button {
-    height: 2.8rem;
-    width: 6rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    cursor: pointer;
+  /* Fenêtre modale */
+  .modal-content {
     background-color: var(--almost-white);
-    border: 3px solid var(--almost-black);
+    padding: 2rem;
     border-radius: 15px;
-    font-weight: 700;
+    position: relative;
+    width: 600px;
+    max-width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Bouton de fermeture "X" */
+    .modal-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0;
+      background: transparent;
+      border: none;
+      color: var(--almost-black);
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .modal-close:hover {
+      color: var(--purple);
+    }
+  }
+}
+
+.submit-button {
+  width: 10rem;
+  background-color: var(--almost-black);
+  color: white;
+  margin: 2rem auto 0;
+}
+
+.content-without-close {
+  label {
+    margin-top: 1.7rem;
   }
 
-  button:hover {
-    border-width: 4px;
+  .message {
+    text-align: center;
+    margin-top: 1.5rem;
   }
 }
