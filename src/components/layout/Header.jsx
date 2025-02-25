@@ -13,11 +13,11 @@ const Header = () => {
 			{/* On sépare le header pur (bandeau) 
           et les modals en dehors du header, 
           ainsi ils ne seront pas limités par l'overflow du header. */}
-			<header className="header">
+			<header>
 				{/* Logo centré */}
 
 				{/* Boutons en haut à droite */}
-				<div className="header-right">
+				<div>
 					<button onClick={() => setShowLogin(true)}>Login</button>
 					<button onClick={() => setShowRegister(true)}>Register</button>
 				</div>
