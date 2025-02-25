@@ -107,8 +107,8 @@ const QuizDetail = () => {
 	const elapsedSeconds = elapsedTime ? (elapsedTime / 1000).toFixed(2) : null;
 
 	return (
-		<div>
-			<div>
+		<div className="quiz-detail-main">
+			<div className="quiz-detail-content">
 				{mode === "overview" && (
 					<QuizOverview quiz={quiz} onPlay={handlePlay} />
 				)}
@@ -120,13 +120,13 @@ const QuizDetail = () => {
 				)}
 
 				{mode === "end" && (
-					<div>
+					<div className="end-content">
 						<h2>Partie terminée</h2>
 						<p>
-							Vous avez {finalScore} bonne(s) réponse(s) sur {totalQuestions}.
+							Vous avez <span className="bold">{finalScore}</span> bonne(s) réponse(s) sur {totalQuestions}.
 						</p>
-						<p>Score final : {percentage}%</p>
-						{elapsedSeconds && <p>Temps total : {elapsedSeconds} secondes</p>}
+						<p>Score final : <span className="bold">{percentage}%</span></p>
+						{elapsedSeconds && <p>Temps total : <span className="bold">{elapsedSeconds}</span> secondes</p>}
 
 						<button onClick={() => setMode("overview")}>
 							Revenir à l’aperçu

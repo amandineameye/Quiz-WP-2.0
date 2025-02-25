@@ -63,11 +63,11 @@ const QuizGame = ({ questions, onGameOver }) => {
 	};
 
 	return (
-		<div>
+		<div className="quiz-game">
 			<div>
-				<p>{question.question}</p>
+				<p className="question">{question.question}</p>
 				{question.contenu && (
-					<div>
+					<div className="image-div">
 						<img src={question.contenu} alt="Aperçu question" />
 					</div>
 				)}

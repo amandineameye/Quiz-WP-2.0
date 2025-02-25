@@ -1,3 +1,7 @@
+h1 {
+  margin: 2.5rem 0;
+}
+
 .quiz-item {
   background-color: var(--purple);
   color: white;
@@ -21,14 +25,51 @@
   }
 
   .image-div {
-    height: 15rem;
+    height: 12rem;
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    border-radius: 15px;
 
     img {
       height: 100%;
       border-radius: 15px;
       border: solid 2px var(--almost-black);
     }
+  }
+}
+
+.quiz-items-container {
+  display: flex;
+  gap: 2rem;
+  padding: 0 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quiz-item-details {
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  .difficulte {
+    font-weight: 600;
+  }
+
+  a {
+    height: 2.8rem;
+    width: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--almost-white);
+    border: 3px solid var(--almost-black);
+    border-radius: 15px;
+    font-weight: 700;
+    color: var(--almost-black);
+    text-decoration: none;
+    margin: 1.5rem auto 0 auto;
   }
 }

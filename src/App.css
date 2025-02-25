@@ -22,12 +22,23 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: rgb(191, 251, 251);
 }
 
 h1,
 h2,
 h3 {
   font-family: "Barriecito", serif;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: var(--almost-black);
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 .page-container {
@@ -75,4 +86,20 @@ select {
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+button,
+a {
+  height: 2.8rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--almost-white);
+  border: 3px solid var(--almost-black);
+  border-radius: 15px;
+  font-weight: 700;
+  color: var(--almost-black);
 }

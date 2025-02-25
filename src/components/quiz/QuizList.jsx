@@ -24,9 +24,9 @@ const QuizList = () => {
 	}
 
 	return (
-		<div>
+		<div  >
 			<h1>Tous les Quiz</h1>
-			<div >
+			<div className="quiz-items-container">
 				{quizzes.map((quiz) => (
 					<div key={quiz.id} className="quiz-item">
 						{/* Vignette à gauche */}
@@ -40,10 +40,10 @@ const QuizList = () => {
 						</div>
 
 						{/* Contenu texte + bouton */}
-						<div>
+						<div className="quiz-item-details">
 							<h3>{quiz.title.rendered}</h3>
 							<p>{quiz.description}</p>
-							<p>Difficulté : {quiz.difficulte?.[0]}</p>
+							<p>Difficulté: <span className="difficulte">{quiz.difficulte?.[0]}</span></p>
 
 							<div>
 								<Link to={`/quiz/${quiz.id}`}>Découvrir</Link>

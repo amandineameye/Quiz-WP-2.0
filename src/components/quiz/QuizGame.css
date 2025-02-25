@@ -1,0 +1,31 @@
+.quiz-game {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  p {
+    display: flex;
+    justify-content: center;
+  }
+
+  .question {
+    font-size: 1.2rem;
+  }
+
+  .image-div {
+    height: 17rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+
+    img {
+      height: 100%;
+      border-radius: 15px;
+      border: solid 1px var(--almost-black);
+    }
+  }
+
+  button {
+    margin: 2rem auto 0 auto;
+  }
+}
