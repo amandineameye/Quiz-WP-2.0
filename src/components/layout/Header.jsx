@@ -15,9 +15,9 @@ const Header = () => {
           ainsi ils ne seront pas limités par l'overflow du header. */}
 			<header>
 				{/* Logo centré */}
-
+				<p className="header-title">Quizzy</p>
 				{/* Boutons en haut à droite */}
-				<div>
+				<div className="header-right">
 					<button onClick={() => setShowLogin(true)}>Login</button>
 					<button onClick={() => setShowRegister(true)}>Register</button>
 				</div>

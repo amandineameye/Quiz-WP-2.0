@@ -1,0 +1,45 @@
+header {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* pour positionner .header-right en absolu */
+  background-color: var(--purple);
+  color: var(--almost-white);
+
+  .header-title {
+    font-family: "Barriecito", serif;
+    font-weight: 400;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: var(--almost-white);
+    cursor: pointer;
+  }
+}
+
+.header-right {
+  position: absolute;
+  top: calc(50px - 1.4rem);
+  right: 2rem;
+  display: flex;
+  gap: 0.5rem; /* écart horizontal entre les 2 boutons */
+
+  button {
+    height: 2.8rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--almost-white);
+    border: 3px solid var(--almost-black);
+    border-radius: 15px;
+    font-weight: 700;
+  }
+
+  button:hover {
+    border-width: 4px;
+  }
+}

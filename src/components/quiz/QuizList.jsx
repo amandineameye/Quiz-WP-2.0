@@ -26,12 +26,11 @@ const QuizList = () => {
 	return (
 		<div>
 			<h1>Tous les Quiz</h1>
-
-			<div>
+			<div >
 				{quizzes.map((quiz) => (
-					<div key={quiz.id}>
+					<div key={quiz.id} className="quiz-item">
 						{/* Vignette à gauche */}
-						<div>
+						<div className="image-div">
 							{quiz.vignette?.guid && (
 								<img
 									src={quiz.vignette.guid}

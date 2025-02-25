@@ -1,0 +1,34 @@
+.quiz-item {
+  background-color: var(--purple);
+  color: white;
+  width: 25rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2rem;
+  border-radius: 15px;
+
+  a {
+    color: white;
+  }
+
+  div {
+    text-align: center;
+    h3 {
+      margin: 1rem;
+    }
+  }
+
+  .image-div {
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+
+    img {
+      height: 100%;
+      border-radius: 15px;
+      border: solid 2px var(--almost-black);
+    }
+  }
+}
