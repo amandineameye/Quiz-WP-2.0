@@ -9,7 +9,7 @@ export const postScoreboard = async (quizId, userId, scorePercent, timeMs) => {
 	}
 
 	const now = new Date();
-	const dateString = now.toISOString.replace("T", " ").split(".")[0];
+	const dateString = now.toISOString().replace("T", " ").split(".")[0];
 	const postTitle = `QUIZ-${quizId}-USER-${userId}-DATE${dateString.replace(
 		/[^0-9]/g,
 		""

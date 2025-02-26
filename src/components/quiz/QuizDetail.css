@@ -1,7 +1,7 @@
 .quiz-detail-main {
   margin-top: 4rem;
 
-  a {
+  .back-home-button {
     height: 2.8rem;
     width: 10rem;
     display: flex;
@@ -15,7 +15,7 @@
     font-weight: 700;
     color: var(--almost-black);
     text-decoration: none;
-    margin: 2.5rem auto 0 auto;
+    margin: 2.5rem auto;
   }
 
   .quiz-detail-content {

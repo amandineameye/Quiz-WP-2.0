@@ -91,6 +91,9 @@ const QuizDetail = () => {
 						totalMs
 					);
 					console.log("Scoreboard créé :", createdScoreboard);
+
+					const updatedQuiz = await getQuizById(quiz.id);
+				setQuiz(updatedQuiz);
 				} catch (err) {
 					console.error("Erreur creation scoreboard:", err);
 				}
@@ -136,7 +139,7 @@ const QuizDetail = () => {
 			</div>
 
 			<div>
-				<Link to="/">Retour à la liste</Link>
+				<Link className="back-home-button" to="/">Retour à la liste</Link>
 			</div>
 		</div>
 	);
