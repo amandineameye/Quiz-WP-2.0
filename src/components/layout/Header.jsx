@@ -25,7 +25,7 @@ const Header = () => {
           ainsi ils ne seront pas limités par l'overflow du header. */}
 			<header>
 				{/* Logo centré */}
-				{userId && <div className={header-left}>
+				{userId && <div className="header-left">
 				<Link to="/create">Crée un quiz</Link>
 				</div>}
 				<p className="header-title">Quizzy</p>
