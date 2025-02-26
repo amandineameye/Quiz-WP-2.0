@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 import { fetchCurrentUser } from "../../services";
 
 

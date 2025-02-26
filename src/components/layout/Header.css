@@ -17,6 +17,16 @@ header {
     cursor: pointer;
   }
 
+  .header-left {
+    a {
+      width: 9rem;
+      text-decoration: none;
+      position: absolute;
+      top: calc(50px - 1.4rem);
+      left: 2rem;
+    }
+  }
+
   .header-right {
     position: absolute;
     top: calc(50px - 1.4rem);
