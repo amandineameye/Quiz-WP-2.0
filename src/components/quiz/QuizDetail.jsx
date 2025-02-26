@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getQuizById, postScoreboard, fetchCurrentUser } from "../../services";
 
+
 import QuizOverview from "./QuizOverview";
 import QuizGame from "./QuizGame";
 
@@ -110,6 +111,8 @@ const QuizDetail = () => {
 	const elapsedSeconds = elapsedTime ? (elapsedTime / 1000).toFixed(2) : null;
 
 	return (
+		<>
+		
 		<div className="quiz-detail-main">
 			<div className="quiz-detail-content">
 				{mode === "overview" && (
@@ -142,6 +145,7 @@ const QuizDetail = () => {
 				<Link className="back-home-button" to="/">Retour à la liste</Link>
 			</div>
 		</div>
+		</>
 	);
 };
 

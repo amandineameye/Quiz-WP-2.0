@@ -1,6 +1,8 @@
 import { postQuiz, uploadImage } from "../../services";
 import { useState, useRef } from "react";
 
+import "./CreateQuiz.css";
+
 const CreateForm = () => {
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
@@ -9,6 +11,7 @@ const CreateForm = () => {
 		question: "",
 		contenu: null,
 		reponse_en: "",
+		reponse_fr: "",
 		reponse_alternative: "",
 	});
 	const [imageFile, setImageFile] = useState(null);
@@ -41,6 +44,7 @@ const CreateForm = () => {
 			question: "",
 			contenu: null,
 			reponse_en: "",
+			reponse_fr: "",
 			reponse_alternative: "",
 		});
 
@@ -88,11 +92,11 @@ const CreateForm = () => {
 	};
 
 	return (
-		<div>
+		<div className="create-main">
 			{message && <p>{message}</p>}
 			<form onSubmit={handleSubmit}>
-				<h2>Create your own quiz</h2>
-				<label htmlFor="title">Title</label>
+				<h2>Crée ton propre quiz</h2>
+				<label htmlFor="title">Titre</label>
 				<input
 					type="text"
 					id="title"
@@ -110,7 +114,7 @@ const CreateForm = () => {
 					onChange={(e) => setDescription(e.target.value)}
 				></textarea>
 
-				<label htmlFor="quiz-image">Quiz image</label>
+				<label htmlFor="quiz-image">Image du quiz</label>
 				<input
 					type="file"
 					id="quiz-image"
@@ -123,13 +127,13 @@ const CreateForm = () => {
 					onChange={(e) => setDifficulty(e.target.value)}
 					value={difficulty}
 				>
-					<option value="">Select difficulty</option>
-					<option value="easy">Easy</option>
-					<option value="medium">Medium</option>
-					<option value="hard">Hard</option>
+					<option value="">Niveau de difficulté</option>
+					<option value="easy">Facile</option>
+					<option value="medium">Moyen</option>
+					<option value="hard">Difficile</option>
 				</select>
 
-				<h3>Question</h3>
+				<h3>Questions</h3>
 				<label htmlFor="question">Question</label>
 				<input
 					type="text"
@@ -139,7 +143,7 @@ const CreateForm = () => {
 					required
 				/>
 
-				<label htmlFor="contenu">Content</label>
+				<label htmlFor="contenu">Contenu</label>
 				<input
 					type="file"
 					id="contenu"
@@ -147,7 +151,15 @@ const CreateForm = () => {
 					ref={fileInputRef}
 				/>
 
-				<label htmlFor="reponse_en">Answer in English</label>
+				<label htmlFor="reponse_fr">Réponse en français</label>
+				<input
+					type="text"
+					id="reponse_fr"
+					onChange={handleQuestionChange}
+					value={currentQuestion.reponse_fr}
+				/>
+
+				<label htmlFor="reponse_en">Réponse en anglais</label>
 				<input
 					type="text"
 					id="reponse_en"
@@ -155,33 +167,33 @@ const CreateForm = () => {
 					value={currentQuestion.reponse_en}
 				/>
 
-				<label htmlFor="reponse_alternative">Alternative answer</label>
+				<label htmlFor="reponse_alternative">Réponse alternative</label>
 				<input
 					type="text"
 					id="reponse_alternative"
 					onChange={handleQuestionChange}
 					value={currentQuestion.reponse_alternative}
 				/>
-				<button type="button" onClick={addQuestion}>
-					Add Question
+				<button className="submit-button" type="button" onClick={addQuestion}>
+					Ajouter la question
 				</button>
 
 				{questions.length > 0 && (
 					<div className="added-questions">
-						<h3>Added questions</h3>
+						<h3>Questions ajoutées</h3>
 						{questions.map((question, index) => (
-							<div key={index}>
+							<div className="added-question-item-div" key={index}>
 								<p>{question.question}</p>
-								<button type="button" onClick={() => deleteQuestion(index)}>
-									Delete question
+								<button className="delete-button"  type="button" onClick={() => deleteQuestion(index)}>
+									X
 								</button>
 							</div>
 						))}
 					</div>
 				)}
 
-				<button type="submit" disabled={questions.length === 0}>
-					Submit quiz
+				<button className="submit-button"  type="submit" disabled={questions.length === 0}>
+					Envoyer le quiz
 				</button>
 			</form>
 		</div>
